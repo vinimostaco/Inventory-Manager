@@ -1,7 +1,9 @@
 import express from "express";
-import dataBaseConnect from "./config/dataBaseConnect.js";
+import MongooseConnect from "./config/dataBaseConnect.js";
 import routes from "./routes/index.js";
-const connect = await dataBaseConnect();
+
+const mongooseConnect = new MongooseConnect();
+const connect = await mongooseConnect.dataBaseConnect();
 const app = express();
 
 connect.on("error", (err) => {
