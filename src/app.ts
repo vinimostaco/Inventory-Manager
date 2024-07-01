@@ -1,9 +1,16 @@
-import express, { Request, Response } from "express";
-
+import express from "express";
+import dataBaseConnect from "./config/dataBaseConnect.js";
+import routes from "./routes/index.js";
+const connect = await dataBaseConnect();
 const app = express();
-app.use(express.json());
 
-app.post("/", (req: Request, res: Response) => {
-  console.log(req.body);
+connect.on("error", (err) => {
+  console.error("Error on connect database: ", err);
 });
+
+connect.once("open", () => {
+  console.log("connected to database");
+});
+
+routes(app);
 export default app;

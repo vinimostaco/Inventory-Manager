@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "module": "esnext", // ou "es6"
-    "target": "es6",
-    "moduleResolution": "node", // Usar resolução de módulos do Node.js
+    "module": "ESNext",
+    "target": "ES2017",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "*": ["node_modules/*"]
-    }
+      "*": ["node_modules/*", "src/*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
