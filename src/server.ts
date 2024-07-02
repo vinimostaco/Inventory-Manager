@@ -1,7 +1,6 @@
 import app from "./app.js";
+import config from "./config/environment.js";
 
-const PORT: number = 3200;
-
-app.listen(PORT, () => {
-  console.log(`escutando na ${PORT}`);
+app.listen(config.port, () => {
+  console.log(`escutando na ${config.port}`);
 });

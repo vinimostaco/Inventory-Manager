@@ -5,7 +5,6 @@ import routes from "./routes/index.js";
 const mongooseConnect = new MongooseConnect();
 const connect = await mongooseConnect.dataBaseConnect();
 const app = express();
-
 connect.on("error", (err) => {
   console.error("Error on connect database: ", err);
 });
