@@ -1,6 +1,5 @@
-import { Document } from "mongoose";
 
-interface IProduct extends Document {
+interface IProduct {
   name: { type: String; required: true };
   description: string;
   category: { type: String; required: true };
